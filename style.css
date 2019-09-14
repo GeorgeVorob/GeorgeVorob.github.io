@@ -13,6 +13,16 @@ color: #cfcfcf;
 body{
 	background-color:#636363;
 }
+A {
+	color: grey;
+	background:#4f4f4f;
+}
+A:visited {
+    color: grey; 
+   }
+A:active {
+    color: white; 
+   }
 HR{
 	color:#dbdbdb
 }

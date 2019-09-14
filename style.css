@@ -26,3 +26,6 @@ A:active {
 HR{
 	color:#dbdbdb
 }
+.background{
+	z-index: -10;
+}

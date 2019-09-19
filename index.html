@@ -3,19 +3,36 @@
 <meta charset="utf-8">
 <title>Main page</title>
 <body bgcolor="#636363">
+<style> 
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+ 
+.overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 1;
+}
+</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="./style.css">
-<video autoplay="autoplay" loop="loop" preload="auto" muted="muted">
-<source src="./background.mp4"></source>
-</video>
-</div>
-<p>
+<div>
+    <div class="overlay">
+        <p>
 <a href="lab0.html"><img src="lab0_link.png"></a>
 </p>
 <p>
 <a href="lab1.html"><img src="lab1_link.png"></a>
 </p>
-</video>
+    </div>
+    <video loop muted autoplay class="fullscreen-bg__video">
+        <source src="./background.mp4" type="video/mp4">
+    </video>
+</div>
 </body>
 </html>

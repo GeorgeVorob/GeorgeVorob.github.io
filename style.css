@@ -26,6 +26,15 @@ A:active {
 HR{
 	color:#dbdbdb
 }
-.background{
-	z-index: -10;
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+	z-index: -100;
+}
+.overlay {
+    position: absolute;
+    top:0;
+    left:0;
 }

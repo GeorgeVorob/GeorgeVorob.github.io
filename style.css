@@ -26,6 +26,9 @@ A:active {
 HR{
 	color:#dbdbdb
 }
+LI{
+	color: #ffffff;
+}
 .fullscreen-bg__video {
     position: absolute;
     top: 0;

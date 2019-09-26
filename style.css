@@ -29,6 +29,11 @@ HR{
 LI{
 	color: #ffffff;
 }
+.center{
+    margin-left: auto;
+    margin-right: auto;
+	text-align: center;
+}
 .fullscreen-bg__video {
     position: absolute;
     top: 0;

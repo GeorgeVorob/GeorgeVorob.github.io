@@ -1,38 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
 <meta charset="utf-8">
 <title>Лабораторная 1</title>
 <style>
 TD.black {
-width: 60;
-height: 60;
+width: 60px;
+height: 60px;
 background: #424242;
 }
 .white{
-width: 60;
-height: 60;
+width: 60px;
+height: 60px;
 background: white;
 }
 .red{
-width: 50;
-height: 40;
+width: 50px;
+height: 40px;
 background: #cf0000;
+border: 1px solid black;
 }
 .gray{
-width: 50;
-height: 40;
+width: 50px;
+height: 40px;
 background: #999999;
+border: 1px solid black;
 }
 .default{
-width: 50;
-height: 40;
+width: 50px;
+height: 40px;
+border: 1px solid black;
+}
+.chesstable{
+background-color: black;
+}
+.calendartable{
+background-color: white;
+border-collapse: collapse;
 }
 </style>
 <link rel="stylesheet" href="style.css">
 <body>
-<h1><a href="index.html" align="left">Назад</a> <p align="center">Лабораторная 1</p></h1>
+<h1><a href="index.html">Назад</a></h1>
+<div class="center">
+<h1>Лабораторная 1</h1>
+</div>
 <hr>
-<table align="left" bgcolor="white" rules="all" height="480" width="480">
+<table class="chesstable">
 <tr align="middle">
 <td class="white"><img src="./chess_sprites/blackRook.png"></td>
 <td class="black"><img src="./chess_sprites/blackKnight.png"></td>
@@ -115,7 +129,7 @@ height: 40;
 </tr>
 </table>
 <p align="right">Сентябрь:</p>
-<table align="right" bgcolor="white" rules="all">
+<table class="calendartable">
 <tr>
 <td class="gray">26</td>
 <td class="gray">27</td>

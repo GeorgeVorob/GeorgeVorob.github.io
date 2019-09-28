@@ -34,6 +34,11 @@ LI{
     margin-right: auto;
 	text-align: center;
 }
+.left{
+    margin-left: left;
+    margin-right: left;
+	text-align: left;
+}
 .fullscreen-bg__video {
     position: absolute;
     top: 0;

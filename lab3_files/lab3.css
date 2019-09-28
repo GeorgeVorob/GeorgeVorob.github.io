@@ -1,0 +1,25 @@
+.p1{
+	background: black;
+	font-size: 30pt;
+	font-weight: normal;
+	font-family: Impact, fantasy;
+	font-style: italic;
+	color: white;
+	text-indent: 1.5em;
+}
+.p2{
+	background: gray;
+	font-size: 25pt;
+	font-weight: 800;
+	font-family: Trattatello, fantasy;
+	color: white;
+	text-indent: 2em;	
+}
+.p3{
+	background: #800000;
+	font-size: 20pt;
+	font-weight: 200;
+	font-family: FreeMono, monospace;
+	color: #e6e035;
+	text-indent: 4em;
+}

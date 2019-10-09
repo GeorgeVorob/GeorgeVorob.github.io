@@ -16,21 +16,99 @@ width: 600px;
 margin: 0 auto;
 border: 3px #777 solid;
 }
+p:first-letter{
+	font-size: 18pt;
+	font-weight: 800;
+	font-family: Trattatello, fantasy;
+	color: #81c7b8;
+	text-indent: 2em;
+}
+table{
+border: 1px solid gray;
+border-collapse: collapse;
+color: white;
+margin: auto;
+}
+th{
+border: 1px solid gray;
+text-align: center;
+}
+td{
+border: 1px solid gray;
+text-align: center;
+}
+tr:nth-child(even) {
+background: #54aba6;
+} 
+tr:nth-child(odd) {
+background: #4a4a4a;
+} 
+tr:last-child {
+background: #3b3b3b;
+} 
+tr:first-child {
+background: #3b3b3b;
+} 
 </style>
 </head>
 <body>
 <h1><a href="index.html">Назад</a></h1>
 <h1 class="center">Лабораторная 4</h1>
 <hr>
-<ol>
-<li><a href="#A">To A</a></li>
-</ol>
-<div class="area" id="A">
+<ul>
+<li><a href="#text">Открыть текст</a></li>
+<li><a href="#table">Открыть таблицу</a></li>
+</ul>
 <div class="box">
-kappa
+<div class="area" id="text">
+<p> Тяжелые бетоны по степени морозостойкости делят на марки от F50 до F700.
+ Чем выше морозостойкость, тем большее кол-во циклов замораживания оттаивания
+ может выдержать бетон без снижения марки по прочности, количество этих циклов 
+ и означает цифра после "F". Морозостойкость бетона для жилых и промышленных зданий
+ обычно характеризуется маркой F50.</p>
+</div>
+<div class="area" id="table">
+<table>
+<tr>
+<td>Марка</td>
+<td>Класс</td>
+<td>Морозостойкость</td>
+<td>Водонепроцинаемость</td>
+</tr>
+<tr>
+<td>M100</td>
+<td>B-7,5</td>
+<td>F100</td>
+<td>W2</td>
+</tr>
+<tr>
+<td>M150</td>
+<td>B-12,5</td>
+<td>F100</td>
+<td>W4</td>
+</tr>
+<tr>
+<td>M200</td>
+<td>B-15</td>
+<td>F100</td>
+<td>W2</td>
+</tr>
+<tr>
+<td>M250</td>
+<td>B-20</td>
+<td>F150</td>
+<td>W4</td>
+</tr>
+<tr>
+<td>Марка</td>
+<td>Класс</td>
+<td>Морозостойкость</td>
+<td>Водонепроцинаемость</td>
+</tr>
+</table>
+</div>
 </div>
 <hr>
 <h2><a href="">Закрыть</a></h2>
-</div>
 </body>
 </html>

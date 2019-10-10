@@ -14,11 +14,11 @@ body{
 	background-color:#636363;
 }
 A {
-	color: grey;
+	color: #c7c7c7;
 	background:#4f4f4f;
 }
 A:visited {
-    color: grey; 
+    color: #c7c7c7; 
    }
 A:active {
     color: white; 

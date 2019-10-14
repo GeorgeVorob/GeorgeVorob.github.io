@@ -1,0 +1,31 @@
+   .line { 
+    border-left: 7px solid #808080;
+    margin-left: 40px;
+    padding-left: 80px;
+	margin-right: 110px;	
+	padding-top: 40px;
+	margin-top: 30px;
+   }
+   .page{
+  direction: ltr;
+  width: 816px;
+  height: 1056px;
+  margin: 1px auto -8px auto;
+  position: relative;
+  overflow: visible;
+  border: 9px solid transparent;
+  background-clip: content-box;
+  border-image: url(images/shadow.png) 9 9 repeat;
+  background-color: white;
+   }
+   .oglavlenie{
+	background-color: cyan;
+	border: 1px solid black;
+	padding: 25px;
+	padding-left: 15px;
+   }
+   .font-oglav{
+	font-size: 16px;
+	font-family: Times, Times New Roman, serif;	  
+	text-indent: 1em;
+   }

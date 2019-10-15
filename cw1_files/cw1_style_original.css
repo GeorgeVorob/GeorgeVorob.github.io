@@ -9,7 +9,7 @@
    .page{
   direction: ltr;
   width: 816px;
-  height: 1056px;
+  height: auto;
   margin: 1px auto -8px auto;
   position: relative;
   overflow: visible;
@@ -24,8 +24,30 @@
 	padding: 25px;
 	padding-left: 15px;
    }
+   .code-box{
+	background-color: orange;
+	border: 1px solid black;
+	padding: 15px;
+	padding-left: 1px;
+   }
    .font-oglav{
-	font-size: 16px;
+	font-size: 18px;
 	font-family: Times, Times New Roman, serif;	  
-	text-indent: 1em;
+	text-indent: 2em;
+   }
+   .font-bold{
+	font-weight:bold
+   }
+   .img_left {
+    float:left;
+    margin: 15px 15px 15px 0;
+   }
+   p{
+	font-size: 14px;
+	word-spacing: 2px;
+	text-indent: 2em;
+   }
+   .font-higlited{
+	border: 1px solid black;
+	background: #ffffe0;
    }

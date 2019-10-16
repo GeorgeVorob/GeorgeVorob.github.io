@@ -15,9 +15,9 @@
 <li class="font-bold">Основы HTML</li>
 <li class="font-bold">Структура HTML документа</li>
 <ul>
-<li><a href="#html"> Элемент &lt;html&gt;</a></li>
-<li><a href="#head">Элемент &lt;head&gt;</a></li>
-<li><a href="#title">Элемент &lt;title&gt;</a></li>
+<li><a href="#html"> Элемент &lt;<span class="font-comment">html</span>&gt;</a></li>
+<li><a href="#head">Элемент &lt;<span class="font-comment">head</span>&gt;</a></li>
+<li><a href="#title">Элемент &lt;<span class="text-comment">title</span>&gt;</a></li>
 <li><a href="#meta">Элемент &lt;meta&gt;</a></li>
 <li><a href="#style">Элемент &lt;style&gt;</a></li>
 <li><a href="#link">Элемент &lt;link&gt;</a></li>
@@ -70,8 +70,8 @@ value="Кнопка"&gt;</span> создаст кнопку с текстом <s
 Браузеры обрабатывают HTML-документы последовательно, с самого начала, при этомо брабатывая CSS и соотнося
  таблицы стилей с элементами страницы</p>
  
-<p>HTML-документ состоит из двух разделов — заголовка — между тегами <span class="font-higlited">&lt;head&gt;</span>...<span class="font-higlited">&lt;/head&gt;</span> и 
-содержательной части — между тегами <span class="font-higlited">&lt;body&gt;</span>...<span class="font-higlited">&lt;/body&gt;</span>.</p>
+<p>HTML-документ состоит из двух разделов — заголовка — между тегами <span class="font-higlited">&lt;<span class="font-comment">head</span>&gt;</span>...<span class="font-higlited">&lt;<span class="text-comment">/head</span>&gt;</span> и 
+содержательной части — между тегами <span class="font-higlited">&lt;<span class="text-comment">body</span>&gt;</span>...<span class="font-higlited">&lt;<span class="text-comment">/body</span>&gt;</span>.</p>
 <!-- конец основ HTML -->
 
 <p class="font-oglav">Структура HTML-документа</p>
@@ -82,6 +82,22 @@ Type Definition, или DTD)</span>. DTD представляет собой XML
 
 <p><span class="font-bold">DOCTYPE</span> отвечает за корректное отображение веб-страницы браузером. DOCTYPE определяет 
 не только версию HTML (например, html), но и соответствующий DTD-файл в Интернете</p>
+<div class="code-box">
+&lt;!DOCTYPE html&gt; <span class="text-comment">&lt;!-- Объявление формата документа --&gt;</span><br>
+&lt;<span class="text-tag">html</span>&gt;<br>
+&lt;<span class="text-tag">head</span>&gt; <span class="text-comment">&lt;!-- Техническая информация о документе --&gt;</span><br>
+&lt;<span class="text-tag">meta</span> <span class="text-arg">charset</span>="UTF-8"&gt; <span class="text-comment">&lt;!-- Определяем кодировку символов документа --&gt;</span><br>
+&lt;<span class="text-tag">title</span>&gt;...&lt;<span class="text-comment">/title</span>&gt; <span class="text-comment">&lt;!-- Задаем заголовок документа --&gt;</span><br>
+&lt;<span class="text-tag">link</span> <span class="text-arg">rel</span>=<span class="text-name">"stylesheet"</span> <span class="text-arg">type</span>=<span class="text-name">"text/css"</span> <span class="text-arg">href</span>=<span class="text-name">"style.css"</span>&gt; <span class="text-comment">&lt;!-- Подключаем внешнюю таблицу стилей --&gt;</span><br>
+&lt;<span class="text-tag">script</span> <span class="text-arg">src</span>=<span class="text-name">"script.js"</span>&gt;<span class="text-tag">/script</span>&gt; <span class="text-comment">&lt;!-- Подключаем сценарии --&gt;</span><br>
+&lt;<span class="text-tag">/head</span>&gt;<br>
+&lt;<span class="text-tag">body</span>&gt; <span class="text-comment">&lt;!-- Основная часть документа --&gt;</span><br>
+&lt;<span class="text-tag">/body</span>&gt;
+&lt;<span class="text-tag">/html</span>&gt;
+</div>
+<p>Элементы, находящиеся в нутри тега <span class="font-higlited">&lt;html&gt;</span>, образуют дерево документа, так называемую <span class="font-bold">объектную модель
+ документа, DOM (document  object  model)</span>. При этом элемент <span class="font-higlited">&lt;html&gt;</span> является корневым элементом.</p>
+ <img class="img_center" src="./cw1_files/DOM.png">
 </div> 
 </div>
 </body>

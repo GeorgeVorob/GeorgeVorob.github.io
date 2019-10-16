@@ -25,13 +25,14 @@
 	padding-left: 15px;
    }
    .code-box{
-	background-color: orange;
+	background-color: #ffe4b5;
 	border: 1px solid black;
-	padding: 15px;
-	padding-left: 1px;
+	padding: 10px;
+	padding-left: 7px;
+	font-size: 13px;
    }
    .font-oglav{
-	font-size: 18px;
+	font-size: 16px;
 	font-family: Times, Times New Roman, serif;	  
 	text-indent: 2em;
    }
@@ -42,8 +43,11 @@
     float:left;
     margin: 15px 15px 15px 0;
    }
+   .img_center {
+    text-align: center;
+   }
    p{
-	font-size: 14px;
+	font-size: 13px;
 	word-spacing: 2px;
 	text-indent: 2em;
    }
@@ -51,3 +55,20 @@
 	border: 1px solid black;
 	background: #ffffe0;
    }
+   a{
+	color: black;
+	text-decoration: none;
+   }
+   .text-comment{
+	color: #008021;
+   }
+   .text-tag{
+	color: #0053e8;
+   }
+   .text-arg{
+	color: red;
+   }
+   .text-name{
+	color: #633b91;
+   }
+   

@@ -16,28 +16,29 @@
   border: 9px solid transparent;
   background-clip: content-box;
   border-image: url(images/shadow.png) 9 9 repeat;
-  background-color: white;
+  background-color: #393b47;
    }
    .oglavlenie{
-	background-color: cyan;
+	background-color: #191b26;
 	border: 1px solid black;
 	padding: 25px;
 	padding-left: 15px;
    }
    .code-box{
-	background-color: #ffe4b5;
+	background-color: #d4d4d4;
 	border: 1px solid black;
 	padding: 10px;
 	padding-left: 7px;
 	font-size: 13px;
    }
    .font-oglav{
-	font-size: 17px;
+	font-size: 21px;
 	font-family: Times, Times New Roman, serif;	  
 	text-indent: 2em;
+	font-background: grey;
    }
    .font-bold{
-	font-weight:bold
+	font-weight:bold;
    }
    .img_left {
     float:left;
@@ -51,13 +52,14 @@
 	font-size: 13px;
 	word-spacing: 2px;
 	text-indent: 2em;
+	color: #c9c9c9;
    }
    .font-higlited{
 	border: 1px solid black;
-	background: #ffffe0;
+	background: #353561;
    }
    a{
-	color: black;
+	color: #c9c9c9;
 	text-decoration: none;
    }
    .text-comment{
@@ -73,15 +75,24 @@
 	color: #633b91;
    }
    table{
-	border: 3px solid black;
+	border: 3px solid #a6a6a6;
 	border-collapse: collapse;
    }
    tr{
-	 border: 3px solid black;  
+	 border: 3px solid #a6a6a6;  
    }
    td{
-	   border: 3px solid black;
+	   border: 3px solid #a6a6a6;
    }
    th{
-	   border: 3px solid black;
+	   border: 3px solid #a6a6a6;
+   }
+   ul{
+	   color: #c9c9c9;
+   }
+   li{
+	   color: #c9c9c9;
+   }
+   figcaption{
+	   color: #c9c9c9;
    }

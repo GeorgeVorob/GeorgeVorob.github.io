@@ -15,9 +15,9 @@
 <li class="font-bold">Основы HTML</li>
 <li class="font-bold">Структура HTML документа</li>
 <ul>
-<li><a href="#html"> Элемент &lt;<span class="font-comment">html</span>&gt;</a></li>
-<li><a href="#head">Элемент &lt;<span class="font-comment">head</span>&gt;</a></li>
-<li><a href="#title">Элемент &lt;<span class="text-comment">title</span>&gt;</a></li>
+<li><a href="#html"> Элемент &lt;html&gt;</a></li>
+<li><a href="#head">Элемент &lt;head&gt;</a></li>
+<li><a href="#title">Элемент &lt;title&gt;</a></li>
 <li><a href="#meta">Элемент &lt;meta&gt;</a></li>
 <li><a href="#style">Элемент &lt;style&gt;</a></li>
 <li><a href="#link">Элемент &lt;link&gt;</a></li>
@@ -97,7 +97,56 @@ Type Definition, или DTD)</span>. DTD представляет собой XML
 </div>
 <p>Элементы, находящиеся в нутри тега <span class="font-higlited">&lt;html&gt;</span>, образуют дерево документа, так называемую <span class="font-bold">объектную модель
  документа, DOM (document  object  model)</span>. При этом элемент <span class="font-higlited">&lt;html&gt;</span> является корневым элементом.</p>
+<figure class="img_center">
  <img class="img_center" src="./cw1_files/DOM.png">
+  <figcaption>
+   РИС. 1. ПРОСТЕЙШАЯ СТРУКТУРА ВЕБ-СТРАНИЦЫ
+  </figcaption>
+</figure>
+
+<p>Чтобы разобраться во взаимодействии элементов веб-страницы, необходимо рассмотреть так называемые 
+<span class="font-bold">«родственные отношения»</span> между элементами. Отношения между множественными вложенными элементами
+ подразделяются на родительские, дочерние и сестринские.</p>
+ 
+<p><span class="font-bold">Предок</span>  — элемент, который заключает всебе другие элементы. На рисунке 1 
+предком для всех элементов является <span class="font-higlited">&lt;html&gt;</span>. В тоже время элемент <span class="font-higlited">&lt;body&gt;</span> является предком для всех содержащихся в нем тегов:
+ <span class="font-higlited">&lt;h1&gt;</span>, <span class="font-higlited">&lt;p&gt;</span>, <span class="font-higlited">&lt;span&gt;</span>, <span class="font-higlited">&lt;nav&gt;</span> и т.д.</p>
+
+<p><span class="font-bold">Потомок </span>— элемент, расположенный внутри одного или более типов элементов. Например,
+<span class="font-higlited">&lt;body&gt;</span>является потомком<span class="font-higlited">&lt;html&gt;</span>, а элемент<span class="font-higlited">&lt;p&gt;</span>является потомком одновременн одля<span class="font-higlited">&lt;body&gt;</span>и<span class="font-higlited">&lt;html&gt;</span>.</p>
+
+<p><span class="font-bold">Родительский элемент</span>  — элемент, связанный с другими элементами более низкого уровня,
+ и находящийся надереве выше их. На рисунке 1 <span class="font-higlited">&lt;html&gt;</span> является родительским только 
+ для<span class="font-higlited">&lt;head&gt;</span>и<span class="font-higlited">&lt;body&gt;</span>. Тег
+ <span class="font-higlited">&lt;p&gt;</span> является родительским только для <span class="font-higlited">&lt;span&gt;</span>.</p>
+ 
+<p><span class="font-bold">Дочерний элемент</span> — элемент, непосредственно подчиненный другому элементу более высокого уровня. 
+На рисунке 1 только элементы <span class="font-higlited">&lt;h1&gt;</span>, <span class="font-higlited">&lt;h2&gt;</span>,
+ <span class="font-higlited">&lt;p&gt;</span>и <span class="font-higlited">&lt;nav&gt;</span> являются дочерними
+ по отношению к<span class="font-higlited">&lt;body&gt;</span>.</p>
+<p>Сестринский элемент — элемент, имеющий общий родительский элемент с рассматриваемым, так называемые
+ элементы одного уровня. На рисунке 1 <span class="font-higlited">&lt;head&gt;</span> и <span class="font-higlited">&lt;body&gt;</span> 
+ — элементы одного уровня, так
+же как и элементы <span class="font-higlited">&lt;h1&gt;</span>, <span class="font-higlited">&lt;h2&gt;</span>,
+ <span class="font-higlited">&lt;p&gt;</span> являются между собой сестринскими</p>
+<ol>
+<li>
+<p id="html" class="font-oglav">Элемент html</p>
+<p>Является корневым элементом документа. Все остальные элементы содержатся  внутри тегов <span class="font-higlited">&lt;html&gt;</span>...<span class="font-higlited">&lt;/html&gt;</span>.
+ Все, что находится за пределами тегов, невоспринимается браузером как код HTML и 
+ никак им не обрабатывается. Для элемента доступны атрибуты <span class="font-higlited">manifest</span> и <span class="font-higlited">&lt;xmlns&gt;</span>, а также​ глобальные атрибуты</p>
+ 
+<table>
+ <caption>ТАБЛИЦА 1. АТРИБУТЫ ТЕГА &lt;HTML&gt;</caption>
+ <tr>
+ <th>Атрибут</th><th>Описание, принимаемое значение</th>
+ </tr>
+ <tr>
+ <td><span class="font-higlited">manifest</span></td><td>С помощью значения атрибута указывается путь к документу кэша манифеста,например: <span class="font-higlited">&lt;html manifest="about_company.appcache"&gt;</span></td>
+ </tr>
+</table>
+</li>
+</ol>
 </div> 
 </div>
 </body>

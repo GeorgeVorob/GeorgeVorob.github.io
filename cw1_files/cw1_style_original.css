@@ -32,7 +32,7 @@
 	font-size: 13px;
    }
    .font-oglav{
-	font-size: 16px;
+	font-size: 17px;
 	font-family: Times, Times New Roman, serif;	  
 	text-indent: 2em;
    }
@@ -44,7 +44,8 @@
     margin: 15px 15px 15px 0;
    }
    .img_center {
-    text-align: center;
+	display: block;
+	margin: 0 auto;
    }
    p{
 	font-size: 13px;
@@ -70,5 +71,18 @@
    }
    .text-name{
 	color: #633b91;
+   }
+   table{
+	border: 3px solid black;
+	border-collapse: collapse;
+   }
+   tr{
+	 border: 3px solid black;  
+   }
+   td{
+	   border: 3px solid black;
+   }
+   th{
+	   border: 3px solid black;
    }
    

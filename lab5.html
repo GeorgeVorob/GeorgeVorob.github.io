@@ -7,15 +7,21 @@
 <style>
 
 </style>
+    <script>
+        function func() {
+           var x = document.getElementById("aaa");
+                x.innerHTML+="<button onclick='func()'>test</button>";
+        }
+    </script>
 </head>
-<body>
+<p>
 <h1><a href="index.html">Назад</a></h1>
 <h1 class="center">Лабораторная 5</h1>
 <hr>
 <p>Задание1:<br>
 Решите уравнение:<br>
 log_2(7х-4) = 2 + log_2(13)
-<form>
+<form id="q1">
 <input type="radio" name="q1">1<br>
 <input type="radio" name="q1">8<br>
 <input type="radio" name="q1">-8<br>
@@ -25,12 +31,12 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание2:<br>
 Увеличение емкости конденсатора колебательного контура вызывает:<br>
-<form>
-<input type="checkbox">уменьшение резонансной частоты<br>
-<input type="checkbox">увеличение  периода колебаний<br>
-<input type="checkbox">увеличение резонансной частоты<br>
-<input type="checkbox">уменьшение периода колебаний<br>
-<input type="checkbox">уменьшение резонансной частоты и увеличение периода колебаний<br>
+<form id="q2">
+<input type="checkbox" name="q2">уменьшение резонансной частоты<br>
+<input type="checkbox" name="q2">увеличение  периода колебаний<br>
+<input type="checkbox" name="q2">увеличение резонансной частоты<br>
+<input type="checkbox" name="q2">уменьшение периода колебаний<br>
+<input type="checkbox" name="q2">уменьшение резонансной частоты и увеличение периода колебаний<br>
 </form>
 </p>
 <hr>
@@ -38,14 +44,14 @@ log_2(7х-4) = 2 + log_2(13)
 Через среднюю линию основания треугольной призмы, объем которой равен 32, проведена плоскость, параллельная боковому ребру.<br>
 Найдите объем отсеченной треугольной призмы.<br>
 <img src=".\lab5_files\q3_img.png" alt="q3_img">
-<form>
-<input type="text">
+<form id="q3">
+<input type="text" name="q3">
 </form>
 </p>
 <hr>
 <p>Задание4:<br>
 К субъектам социального партнерства не относятся:
-<form>
+<form id="q4">
 <input type="radio" name="q4">представитель власти<br>
 <input type="radio" name="q4">профсоюзы<br>
 <input type="radio" name="q4">работодатель<br>
@@ -54,12 +60,60 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание5:<br>
 Влияет ли степень инвалидности на размер трудовой пенсии по инвалидности:
-<form>
+<form id="q5">
 <input type="radio" name="q5">да, влияет на размер базовой части<br>
 <input type="radio" name="q5">нет, не влияет<br>
 <input type="radio" name="q5">да, влияет на размер базовой и страховой части<br>
 </form>
+</p>
 <hr>
+<p>Задание6:<br>
+Высоким удельным электрическим сопротивлением обладают:
+<form id="q6">
+<input type="radio" name="q6">диэлектрики<br>
+<input type="radio" name="q6">проводники<br>
+<input type="radio" name="q6">чистые металлы<br>
+<input type="radio" name="q6">полупроводники<br>
+</form>
+</p>
+<hr>
+<p>Задание7:<br>
+Руководитель предприятия в обязательном порядке обязан назначить ответственных:
+<form name="q7">
+    <input type="checkbox" >по надзору, уходу и ремонту зданийЮ сооружений<br>
+    <input type="checkbox" >за подготовку текущей документации по охране труда<br>
+    <input type="checkbox" >для контроля за ходом выполнения соглашения по охране труда<br>
+    <input type="checkbox" >за исправное содержание и безопасную эксплуатацию котлов<br>
+    <input type="checkbox" >за электрохозяйство<br>
+</form>
+</p>
+<hr>
+<p>Задание8:<br>
+    Денежная реформа в России была проведена в:
+<form id="q8">
+    <input type="text" name="q8">г.<br>
+</form>
+</p>
+<hr>
+<p>Задание9:<br>
+    Первая трамвайная линия в Москве была введена в действие в:
+<form id="q9">
+<input type="text" name="q9">г.<br>
+</form>
+</p>
+<hr>
+<p>Задание10:<br>
+    Бактрии рода Salmonella являются возбудителями:
+<form id="q10">
+    <input type="checkbox" >туберкулеза<br>
+    <input type="checkbox" >брюшного тифа и паратифа<br>
+    <input type="checkbox" >дизентерии<br>
+    <input type="checkbox" >сибирской язвы<br>
+</form>
+</p>
+<hr>
+<div id="aaa"></div>
+<button onclick="func()">test</button>
 <h1><a href=".\lab5_files\lab5_answers.pdf">Ссылка на pdf</a></h1>
 </body>
 </html>

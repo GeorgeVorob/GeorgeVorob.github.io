@@ -8,9 +8,15 @@
 
 </style>
     <script>
-        function func() {
-           var x = document.getElementById("aaa");
-                x.innerHTML+="<button onclick='func()'>test</button>";
+        function check(kappa) {
+		    for (i = 0; i < kappa.elements.length; i++) {
+			if((kappa.elements[i].value=='t'))
+		//	alert(kappa.elements[i].checked)
+			if(kappa.elements[i].checked){
+			x = document.getElementById(kappa.name);
+			x.innerHTML+="DA";
+			}
+			};
         }
     </script>
 </head>
@@ -21,11 +27,13 @@
 <p>Задание1:<br>
 Решите уравнение:<br>
 log_2(7х-4) = 2 + log_2(13)
-<form id="q1">
-<input type="radio" name="q1">1<br>
-<input type="radio" name="q1">8<br>
+<p id="q1"></p>
+<form onsubmit="check(this);return false;" name="q1">
+<input type="radio" name="q1" value="f">1<br>
+<input type="radio" name="q1" value="t">8<br>
 <input type="radio" name="q1">-8<br>
 <input type="radio" name="q1">2<br>
+<p><input type="submit" value="Проверить"></p>
 </form>
 </p>
 <hr>

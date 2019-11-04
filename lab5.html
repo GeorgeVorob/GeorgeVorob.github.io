@@ -9,14 +9,23 @@
 </style>
     <script>
         function check(kappa) {
+		    flag=1;
 		    for (i = 0; i < kappa.elements.length; i++) {
-			if((kappa.elements[i].value=='t'))
-		//	alert(kappa.elements[i].checked)
-			if(kappa.elements[i].checked){
-			x = document.getElementById(kappa.name);
-			x.innerHTML+="DA";
+			if(kappa.elements[i].type=="text")
+			if(kappa.elements[i].value!=kappa.elements[i].name)
+			flag=0;
+			if(kappa.elements[i].value=='t')
+			if(!kappa.elements[i].checked)
+			flag=0;
+			if(kappa.elements[i].value=='f')
+			if(kappa.elements[i].checked)
+			flag=0;
 			}
-			};
+			x = document.getElementById(kappa.name);
+			if(flag==1)
+			x.innerHTML="Верно";
+			else
+			x.innerHTML="Неверно";
         }
     </script>
 </head>
@@ -27,101 +36,117 @@
 <p>Задание1:<br>
 Решите уравнение:<br>
 log_2(7х-4) = 2 + log_2(13)
-<p id="q1"></p>
 <form onsubmit="check(this);return false;" name="q1">
 <input type="radio" name="q1" value="f">1<br>
 <input type="radio" name="q1" value="t">8<br>
-<input type="radio" name="q1">-8<br>
-<input type="radio" name="q1">2<br>
+<input type="radio" name="q1" value="f">-8<br>
+<input type="radio" name="q1" value="f">2<br>
 <p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q1"></p>
 </p>
 <hr>
 <p>Задание2:<br>
 Увеличение емкости конденсатора колебательного контура вызывает:<br>
-<form id="q2">
-<input type="checkbox" name="q2">уменьшение резонансной частоты<br>
-<input type="checkbox" name="q2">увеличение  периода колебаний<br>
-<input type="checkbox" name="q2">увеличение резонансной частоты<br>
-<input type="checkbox" name="q2">уменьшение периода колебаний<br>
-<input type="checkbox" name="q2">уменьшение резонансной частоты и увеличение периода колебаний<br>
+<form onsubmit="check(this);return false;" name="q2">
+<input type="checkbox" name="q2" value="t">уменьшение резонансной частоты<br>
+<input type="checkbox" name="q2" value="t">увеличение  периода колебаний<br>
+<input type="checkbox" name="q2" value="f">увеличение резонансной частоты<br>
+<input type="checkbox" name="q2" value="f">уменьшение периода колебаний<br>
+<input type="checkbox" name="q2" value="t">уменьшение резонансной частоты и увеличение периода колебаний<br>
+<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q2"></p>
 </p>
 <hr>
 <p>Задание3:<br>
 Через среднюю линию основания треугольной призмы, объем которой равен 32, проведена плоскость, параллельная боковому ребру.<br>
 Найдите объем отсеченной треугольной призмы.<br>
 <img src=".\lab5_files\q3_img.png" alt="q3_img">
-<form id="q3">
-<input type="text" name="q3">
+<form onsubmit="check(this);return false;" name="q3">
+<input type="text" name="8">
+<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q3"></p>
 </p>
 <hr>
 <p>Задание4:<br>
 К субъектам социального партнерства не относятся:
-<form id="q4">
-<input type="radio" name="q4">представитель власти<br>
-<input type="radio" name="q4">профсоюзы<br>
-<input type="radio" name="q4">работодатель<br>
-<input type="radio" name="q4">отдельный работник<br>
+<form onsubmit="check(this);return false;" name="q4">
+<input type="radio" name="q4" value="f">представитель власти<br>
+<input type="radio" name="q4" value="t">профсоюзы<br>
+<input type="radio" name="q4" value="f">работодатель<br>
+<input type="radio" name="q4" value="f">отдельный работник<br>
+<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q4"></p>
 <hr>
 <p>Задание5:<br>
 Влияет ли степень инвалидности на размер трудовой пенсии по инвалидности:
-<form id="q5">
-<input type="radio" name="q5">да, влияет на размер базовой части<br>
-<input type="radio" name="q5">нет, не влияет<br>
-<input type="radio" name="q5">да, влияет на размер базовой и страховой части<br>
+<form onsubmit="check(this);return false;" name="q5">
+<input type="radio" name="q5" value="f">да, влияет на размер базовой части<br>
+<input type="radio" name="q5" value="f">нет, не влияет<br>
+<input type="radio" name="q5" value="t">да, влияет на размер базовой и страховой части<br>
+<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q5"></p>
 </p>
 <hr>
 <p>Задание6:<br>
 Высоким удельным электрическим сопротивлением обладают:
-<form id="q6">
-<input type="radio" name="q6">диэлектрики<br>
-<input type="radio" name="q6">проводники<br>
-<input type="radio" name="q6">чистые металлы<br>
-<input type="radio" name="q6">полупроводники<br>
+<form onsubmit="check(this);return false;" name="q6">
+<input type="radio" name="q6" value="t">диэлектрики<br>
+<input type="radio" name="q6" value="f">проводники<br>
+<input type="radio" name="q6" value="f">чистые металлы<br>
+<input type="radio" name="q6" value="f">полупроводники<br>
+<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q6"></p>
 </p>
 <hr>
 <p>Задание7:<br>
 Руководитель предприятия в обязательном порядке обязан назначить ответственных:
-<form name="q7">
-    <input type="checkbox" >по надзору, уходу и ремонту зданийЮ сооружений<br>
-    <input type="checkbox" >за подготовку текущей документации по охране труда<br>
-    <input type="checkbox" >для контроля за ходом выполнения соглашения по охране труда<br>
-    <input type="checkbox" >за исправное содержание и безопасную эксплуатацию котлов<br>
-    <input type="checkbox" >за электрохозяйство<br>
+<form onsubmit="check(this);return false;" name="q7">
+    <input type="checkbox" value="t">по надзору, уходу и ремонту зданийЮ сооружений<br>
+    <input type="checkbox" value="f">за подготовку текущей документации по охране труда<br>
+    <input type="checkbox" value="f">для контроля за ходом выполнения соглашения по охране труда<br>
+    <input type="checkbox" value="t">за исправное содержание и безопасную эксплуатацию котлов<br>
+    <input type="checkbox" value="t">за электрохозяйство<br>
+	<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q7"></p>
 </p>
 <hr>
 <p>Задание8:<br>
     Денежная реформа в России была проведена в:
-<form id="q8">
-    <input type="text" name="q8">г.<br>
+<form onsubmit="check(this);return false;" name="q8">
+    <input type="text" name="1897">г.<br>
+	<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q8"></p>
 </p>
 <hr>
 <p>Задание9:<br>
     Первая трамвайная линия в Москве была введена в действие в:
-<form id="q9">
-<input type="text" name="q9">г.<br>
+<form onsubmit="check(this);return false;" name="q9">
+<input type="text" name="1895">г.<br>
+<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q9"></p>
 </p>
 <hr>
 <p>Задание10:<br>
     Бактрии рода Salmonella являются возбудителями:
-<form id="q10">
-    <input type="checkbox" >туберкулеза<br>
-    <input type="checkbox" >брюшного тифа и паратифа<br>
-    <input type="checkbox" >дизентерии<br>
-    <input type="checkbox" >сибирской язвы<br>
+<form onsubmit="check(this);return false;" name="q10">
+    <input type="checkbox" value="f">туберкулеза<br>
+    <input type="checkbox" value="t">брюшного тифа и паратифа<br>
+    <input type="checkbox" value="f">дизентерии<br>
+    <input type="checkbox" value="f">сибирской язвы<br>
+	<p><input type="submit" value="Проверить"></p>
 </form>
+<p id="q10"></p>
 </p>
 <hr>
-<div id="aaa"></div>
-<button onclick="func()">test</button>
 <h1><a href=".\lab5_files\lab5_answers.pdf">Ссылка на pdf</a></h1>
 </body>
 </html>

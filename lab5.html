@@ -9,7 +9,7 @@
 </style>
     <script>
         function check(kappa) {
-		    flag=1;
+		    var flag=1;
 		    for (i = 0; i < kappa.elements.length; i++) {
 			if(kappa.elements[i].type=="text")
 			if(kappa.elements[i].value!=kappa.elements[i].name)
@@ -22,11 +22,27 @@
 			flag=0;
 			}
 			x = document.getElementById(kappa.name);
-			if(flag==1)
+			if(flag==1){
 			x.innerHTML="Верно";
-			else
+			return true;
+			}
+			else{
 			x.innerHTML="Неверно";
+			return false;
+			}
         }
+		function checkall(){
+		var right=0;
+		var current="string";
+		var temp;
+		for(j=1;j<=10;j++){
+		temp=j.toString();
+		current="fq"+temp;
+		if(check(document.getElementById(current)))
+		right++;
+		}
+		document.getElementById("result").innerHTML=right;
+		}
     </script>
 </head>
 <p>
@@ -36,7 +52,7 @@
 <p>Задание1:<br>
 Решите уравнение:<br>
 log_2(7х-4) = 2 + log_2(13)
-<form onsubmit="check(this);return false;" name="q1">
+<form onsubmit="check(this);return false;" name="q1" id="fq1">
 <input type="radio" name="q1" value="f">1<br>
 <input type="radio" name="q1" value="t">8<br>
 <input type="radio" name="q1" value="f">-8<br>
@@ -48,7 +64,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание2:<br>
 Увеличение емкости конденсатора колебательного контура вызывает:<br>
-<form onsubmit="check(this);return false;" name="q2">
+<form onsubmit="check(this);return false;" name="q2" id="fq2">
 <input type="checkbox" name="q2" value="t">уменьшение резонансной частоты<br>
 <input type="checkbox" name="q2" value="t">увеличение  периода колебаний<br>
 <input type="checkbox" name="q2" value="f">увеличение резонансной частоты<br>
@@ -63,7 +79,7 @@ log_2(7х-4) = 2 + log_2(13)
 Через среднюю линию основания треугольной призмы, объем которой равен 32, проведена плоскость, параллельная боковому ребру.<br>
 Найдите объем отсеченной треугольной призмы.<br>
 <img src=".\lab5_files\q3_img.png" alt="q3_img">
-<form onsubmit="check(this);return false;" name="q3">
+<form onsubmit="check(this);return false;" name="q3" id="fq3">
 <input type="text" name="8">
 <p><input type="submit" value="Проверить"></p>
 </form>
@@ -72,7 +88,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание4:<br>
 К субъектам социального партнерства не относятся:
-<form onsubmit="check(this);return false;" name="q4">
+<form onsubmit="check(this);return false;" name="q4" id="fq4">
 <input type="radio" name="q4" value="f">представитель власти<br>
 <input type="radio" name="q4" value="t">профсоюзы<br>
 <input type="radio" name="q4" value="f">работодатель<br>
@@ -83,7 +99,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание5:<br>
 Влияет ли степень инвалидности на размер трудовой пенсии по инвалидности:
-<form onsubmit="check(this);return false;" name="q5">
+<form onsubmit="check(this);return false;" name="q5" id="fq5">
 <input type="radio" name="q5" value="f">да, влияет на размер базовой части<br>
 <input type="radio" name="q5" value="f">нет, не влияет<br>
 <input type="radio" name="q5" value="t">да, влияет на размер базовой и страховой части<br>
@@ -94,7 +110,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание6:<br>
 Высоким удельным электрическим сопротивлением обладают:
-<form onsubmit="check(this);return false;" name="q6">
+<form onsubmit="check(this);return false;" name="q6" id="fq6">
 <input type="radio" name="q6" value="t">диэлектрики<br>
 <input type="radio" name="q6" value="f">проводники<br>
 <input type="radio" name="q6" value="f">чистые металлы<br>
@@ -106,7 +122,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание7:<br>
 Руководитель предприятия в обязательном порядке обязан назначить ответственных:
-<form onsubmit="check(this);return false;" name="q7">
+<form onsubmit="check(this);return false;" name="q7" id="fq7">
     <input type="checkbox" value="t">по надзору, уходу и ремонту зданийЮ сооружений<br>
     <input type="checkbox" value="f">за подготовку текущей документации по охране труда<br>
     <input type="checkbox" value="f">для контроля за ходом выполнения соглашения по охране труда<br>
@@ -119,7 +135,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание8:<br>
     Денежная реформа в России была проведена в:
-<form onsubmit="check(this);return false;" name="q8">
+<form onsubmit="check(this);return false;" name="q8" id="fq8">
     <input type="text" name="1897">г.<br>
 	<p><input type="submit" value="Проверить"></p>
 </form>
@@ -128,7 +144,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание9:<br>
     Первая трамвайная линия в Москве была введена в действие в:
-<form onsubmit="check(this);return false;" name="q9">
+<form onsubmit="check(this);return false;" name="q9" id="fq9">
 <input type="text" name="1895">г.<br>
 <p><input type="submit" value="Проверить"></p>
 </form>
@@ -137,7 +153,7 @@ log_2(7х-4) = 2 + log_2(13)
 <hr>
 <p>Задание10:<br>
     Бактрии рода Salmonella являются возбудителями:
-<form onsubmit="check(this);return false;" name="q10">
+<form onsubmit="check(this);return false;" name="q10" id="fq10">
     <input type="checkbox" value="f">туберкулеза<br>
     <input type="checkbox" value="t">брюшного тифа и паратифа<br>
     <input type="checkbox" value="f">дизентерии<br>
@@ -146,6 +162,9 @@ log_2(7х-4) = 2 + log_2(13)
 </form>
 <p id="q10"></p>
 </p>
+<hr>
+<button onclick="checkall();return false;">Проверить всё</button> 
+<p id="result"></p>
 <hr>
 <h1><a href=".\lab5_files\lab5_answers.pdf">Ссылка на pdf</a></h1>
 </body>

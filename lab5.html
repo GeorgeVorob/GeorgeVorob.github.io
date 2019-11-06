@@ -34,14 +34,13 @@
 		function checkall(){
 		var right=0;
 		var current="string";
-		var temp;
 		for(j=1;j<=10;j++){
-		temp=j.toString();
-		current="fq"+temp;
+		current="fq"+j.toString();
 		if(check(document.getElementById(current)))
 		right++;
 		}
-		document.getElementById("result").innerHTML=right;
+		document.getElementById("result").innerHTML="Правильных ответов: "+right;
+		window.scrollTo(0,document.body.scrollHeight);
 		}
     </script>
 </head>

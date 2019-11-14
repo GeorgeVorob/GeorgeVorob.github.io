@@ -8,11 +8,34 @@
 
 </style>
     <script>
+	function build(){
+		var tab=document.getElementById("tabl");
+		let h=document.getElementById("heig").value;
+		let w=document.getElementById("wid").value;
+		for(let i=0;i<h;i++){
+		let newline=document.createElement("tr");
+		//tab.innerHTML+="<tr>"
+		for(let j=0;j<w;j++){
+			let newcell=document.createElement("td");
+			newline.appendChild(newcell);
+		}
+		tab.appendChild(newline);
+		}
+	}
 	</script>
 </head>
 <body>
 <h1><a href="index.html">Назад</a></h1>
 <h1 class="center">Лабораторная 6</h1>
 <hr>
+<form onsubmit="build();return false;" id="source">
+Клетки по вертикали:<br>
+<input type"text" id="heig"><br>
+Клетки по горизонтали:<br>
+<input type"text" id="wid"><br>
+<input type="submit" value="Построить поле">
+</form>
+<table id="tabl">
+</table>
 </body>
 </html>

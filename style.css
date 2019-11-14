@@ -58,3 +58,23 @@ LI{
 form{
 	color: #ffffff; 
 }
+table{
+border: 1px solid gray;
+border-collapse: collapse;
+color: white;
+margin: auto;
+}
+th{
+border: 1px solid gray;
+text-align: center;
+}
+td{
+border: 1px solid gray;
+text-align: center;
+}
+tr:nth-child(even) {
+background: #54aba6;
+} 
+tr:nth-child(odd) {
+background: #4a4a4a;
+} 

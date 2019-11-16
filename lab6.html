@@ -5,22 +5,50 @@
 <title>Лабораторная 5</title>
 <link rel="stylesheet" href="style.css">
 <style>
-
+tr:nth-child(even) {
+background: #4a4a4a;
+} 
 </style>
     <script>
+	var flag=1;
 	function build(){
 		var tab=document.getElementById("tabl");
 		let h=document.getElementById("heig").value;
 		let w=document.getElementById("wid").value;
+		if((h>50)||(w>50)) alert("Слишком большое поле!");
+		else{
+		let siz=document.documentElement.clientWidth / w;
 		for(let i=0;i<h;i++){
 		let newline=document.createElement("tr");
-		//tab.innerHTML+="<tr>"
 		for(let j=0;j<w;j++){
 			let newcell=document.createElement("td");
+			newcell.width=siz;
+			newcell.height=siz;
 			newline.appendChild(newcell);
 		}
 		tab.appendChild(newline);
 		}
+		}
+	}
+	window.onload = function(){
+	
+	document.getElementById("tabl").onclick = function(event) {
+	if(!event.target.hasChildNodes()){
+	let img = document.createElement('img');
+	if(flag==1){
+	img.src="./lab6_files/krest.png"
+	flag=0;
+	}
+	else{
+	img.src="./lab6_files/crug.png"
+	flag=1;
+	}
+	img.style.height ="100%";
+	img.style.width ="100%";
+	event.target.appendChild(img);
+	}
+	}
+	
 	}
 	</script>
 </head>
@@ -33,6 +61,7 @@
 <input type"text" id="heig"><br>
 Клетки по горизонтали:<br>
 <input type"text" id="wid"><br>
+*Не более 50 клеток в любую из сторон <br>
 <input type="submit" value="Построить поле">
 </form>
 <table id="tabl">

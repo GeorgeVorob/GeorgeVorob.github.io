@@ -59,17 +59,17 @@ form{
 	color: #ffffff; 
 }
 table{
-border: 1px solid gray;
+border: 1px solid white;
 border-collapse: collapse;
 color: white;
 margin: auto;
 }
 th{
-border: 1px solid gray;
+border: 1px solid white;
 text-align: center;
 }
 td{
-border: 1px solid gray;
+border: 1px solid white;
 text-align: center;
 }
 tr:nth-child(even) {

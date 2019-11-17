@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>Лабораторная 5</title>
+<title>Лабораторная 6</title>
 <link rel="stylesheet" href="style.css">
 <style>
 tr:nth-child(even) {
@@ -10,13 +10,17 @@ background: #4a4a4a;
 } 
 </style>
     <script>
+	var tabarr;
 	var flag=1;
 	function build(){
 		var tab=document.getElementById("tabl");
 		let h=document.getElementById("heig").value;
 		let w=document.getElementById("wid").value;
-		if((h>50)||(w>50)) alert("Слишком большое поле!");
-		else{
+		tabarr=new Array(h);
+		for(let i=0;i<h;i++){
+		tabarr[i]= new Array(w);
+		}
+		if((h>50)||(w>50)) {alert("Слишком большое поле!"); return;}
 		let siz=document.documentElement.clientWidth / w;
 		for(let i=0;i<h;i++){
 		let newline=document.createElement("tr");
@@ -24,29 +28,63 @@ background: #4a4a4a;
 			let newcell=document.createElement("td");
 			newcell.width=siz;
 			newcell.height=siz;
+			newcell.setAttribute("x",j);
+			newcell.setAttribute("y",i);
+			newcell.setAttribute("status","empty");
+			tabarr[i][j]=newcell;
 			newline.appendChild(newcell);
 		}
 		tab.appendChild(newline);
 		}
-		}
+//		let img = document.createElement('img');
+//		img.src="./lab6_files/krest.png"
+//		img.style.height ="100%";
+//		img.style.width ="100%";
+//		tabarr[2][2].appendChild(img);
+		
 	}
+	
+	
 	window.onload = function(){
 	
 	document.getElementById("tabl").onclick = function(event) {
-	if(!event.target.hasChildNodes()){
+	if(event.target.hasChildNodes()) return;
 	let img = document.createElement('img');
+	let status;
 	if(flag==1){
 	img.src="./lab6_files/krest.png"
 	flag=0;
+	event.target.status="krest"
 	}
 	else{
 	img.src="./lab6_files/crug.png"
 	flag=1;
+	event.target.status="crug"
 	}
 	img.style.height ="100%";
 	img.style.width ="100%";
 	event.target.appendChild(img);
+	checkwin(event.target);
 	}
+	
+	function checkwin(thistd){
+	let x=thistd.getAttribute("x");
+	let y=thistd.getAttribute("y");
+	let lastturn
+	let wincount=0;
+	if(flag==0) lastturn= "krest";
+	else lastturn="crug"
+	//document.getElementById("win").innerHTML+="| x:"+thistd.getAttribute("x")+" y:"+thistd.getAttribute("y");
+	while((x>0)&&(tabarr[y][x-1].status==lastturn)) x--;
+	while(tabarr[y][x].status ==lastturn){
+	wincount++;
+	x++;
+	}
+	if(wincount>=5)
+	if(lastturn=="krest")
+	alert("red is win!");
+	else
+	alert("blue is win!");
 	}
 	
 	}
@@ -58,10 +96,11 @@ background: #4a4a4a;
 <hr>
 <form onsubmit="build();return false;" id="source">
 Клетки по вертикали:<br>
-<input type"text" id="heig"><br>
+<input type="text" id="heig"><br>
 Клетки по горизонтали:<br>
-<input type"text" id="wid"><br>
+<input type="text" id="wid"><br>
 *Не более 50 клеток в любую из сторон <br>
+<p id="win"></p>
 <input type="submit" value="Построить поле">
 </form>
 <table id="tabl">

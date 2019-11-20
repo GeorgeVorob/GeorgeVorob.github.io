@@ -39,11 +39,6 @@ background: #4a4a4a;
 		}
 		tab.appendChild(newline);
 		}
-//		let img = document.createElement('img');
-//		img.src="./lab6_files/krest.png"
-//		img.style.height ="100%";
-//		img.style.width ="100%";
-//		tabarr[2][2].appendChild(img);
 		
 	}
 	
@@ -80,7 +75,6 @@ background: #4a4a4a;
 	let wincount=0;
 	if(flag==0) lastturn= 'krest';
 	else lastturn='crug';
-	//document.getElementById("win").innerHTML+="| x:"+thistd.getAttribute("x")+" y:"+thistd.getAttribute("y");
 	while((x-xstep>=0)&&(x-xstep<w)&&(y-ystep<h)&&(y-ystep>=0)&&(tabarr[y-ystep][x-xstep].status==lastturn)) {x-=xstep; y-=ystep}
 	wincount++;
 	while((x+xstep>=0)&&(x+xstep<w)&&(y+ystep<h)&&(y+ystep>=0)&&(tabarr[y+ystep][x+xstep].status ==lastturn)){
@@ -88,7 +82,6 @@ background: #4a4a4a;
 	x+=xstep;
 	y+=ystep;
 	}
-	//if(!((x+xstep>=0)&&(x+xstep<w)&&(y+ystep<h)&&(y+ystep>=0)))wincount++;
 	if(wincount>=5){
 	if(lastturn=="krest")
 	alert("Red won!");

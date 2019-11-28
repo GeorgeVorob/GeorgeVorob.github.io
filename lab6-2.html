@@ -25,6 +25,7 @@
             background: #808080;
         }
     </style>
+	<script src="./cookiework.js"></script>
     <script>
         var tabarr;
         var flag = 1;
@@ -42,6 +43,7 @@
             var tab = document.getElementById("tabl");
             h = 10;
             w = 10;
+			s=-1;
             tab.innerHTML = "";
             tabarr = new Array(h);
             for (let i = 0; i < h; i++) {
@@ -57,9 +59,16 @@
                             newcell.className = "wall";
                             break;
                         case '2':
+						if(getCookie("Cxpos")!=""){
+						xpos=getCookie("Cxpos");
+						ypos=getCookie("Cypos");
+						newcell.className="player";
+						}
+						else{
                             newcell.className = "player";
                             xpos = j;
                             ypos = i;
+						}
                             break;
                         case '3':
                             newcell.className = "win";
@@ -120,7 +129,9 @@
                         break;
                 }
                 if ((xpos == winxpos) && (ypos == winypos)) win = true;
-                if (win) alert("You win!");
+                if (win) {alert("You win!"); build(); win=false;}
+				setCookie("Cxpos",xpos,2);
+				setCookie("Cypos",ypos,2);
             }
         }
     </script>

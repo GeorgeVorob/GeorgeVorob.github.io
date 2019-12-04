@@ -59,16 +59,9 @@
                             newcell.className = "wall";
                             break;
                         case '2':
-						if(getCookie("Cxpos")!=""){
-						xpos=getCookie("Cxpos");
-						ypos=getCookie("Cypos");
-						newcell.className="player";
-						}
-						else{
                             newcell.className = "player";
                             xpos = j;
-                            ypos = i;
-						}
+                            ypos = i;						
                             break;
                         case '3':
                             newcell.className = "win";
@@ -84,6 +77,12 @@
                 }
                 tab.appendChild(newline);
             }
+						if(getCookie("Cxpos")!=""){
+						xpos=parseInt(getCookie("Cxpos"));
+						ypos=parseInt(getCookie("Cypos"));
+						tabarr[8][1].className="empty";
+						tabarr[ypos][xpos].className="player";
+						}
 
         }
 
@@ -121,7 +120,7 @@
                         break;
                     case "s":
                     case "ы":
-                        if (tabarr[ypos + 1][xpos].className != "wall") {
+                        if (tabarr[(ypos + 1)][xpos].className != "wall") {
                             tabarr[ypos + 1][xpos].className = "player";
                             tabarr[ypos][xpos].className = "empty";
                             ypos++;
@@ -129,7 +128,13 @@
                         break;
                 }
                 if ((xpos == winxpos) && (ypos == winypos)) win = true;
-                if (win) {alert("You win!"); build(); win=false;}
+                if (win) {  win=false;
+				setCookie("Cxpos",1,2);
+				setCookie("Cypos",8,2);
+				alert("You win!");
+				build();
+				return;
+				}
 				setCookie("Cxpos",xpos,2);
 				setCookie("Cypos",ypos,2);
             }

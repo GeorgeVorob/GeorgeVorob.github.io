@@ -1,3 +1,45 @@
+@media (max-width: 1437px){
+	.header{
+		display: flex; 
+		text-align: left;
+		flex-direction: column;
+		justify-content: flex-start;
+		max-width: 113px;
+		min-height: 100%;
+		background-color: #34bad1;
+	}
+	input {
+  width: 93px;
+	}
+.heading-button:link {
+  justify-content: flex-end;
+  text-decoration: none;
+  padding: 2px 2px;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-right-width: 1px;
+  border-right-style: solid;
+  margin: 5px 3px 5px 3px;
+  color: #238394;
+}
+.messages:target {
+	display: flex;
+	flex: 10%;
+	padding: 5px 5px 5px 5px;
+	border: 3px solid #238394;
+	background: lightgray;
+	border-radius: 8px;
+	margin-top: 1px;
+   }
+img{
+	max-height:50%;
+	max-width:50%;
+}
+}
+@media(min-width: 1438px){
 .header{
 	display: inline-flex; 
 	justify-content: flex-start;
@@ -5,18 +47,6 @@
 	background-color: #34bad1;
 	min-width: 100%;
 	max-height: 50px;
-}
-.header-buttonbox{
-	display: flex; 
-	justify-content: space-between;
-	align-items: center;
-	background-color: #34bad1;
-	min-width: 100%;
-	max-height: 50px;
-	margin: 0 10px 0 10px;
-}
-body{
-	background-color: #7bd8e8;
 }
 .heading-button:link {
   justify-content: flex-end;
@@ -32,6 +62,29 @@ body{
   border-right-style: solid;
   margin: 0 10px 0 10px;
   color: #238394;
+}
+.messages:target {
+	display: flex;
+	flex: 10%;
+	padding: 5px 5px 5px 5px;
+	border: 3px solid #238394;
+	background: lightgray;
+	border-radius: 8px;
+	margin-top: 190px;
+   }
+}
+.header-buttonbox{
+	display: flex; 
+	justify-content: space-between;
+	align-items: center;
+	background-color: #34bad1;
+	min-width: 100%;
+	max-height: 50px;
+	margin: 0 10px 0 10px;
+}
+body{
+	background-color: #7bd8e8;
+	margin: 0;
 }
 .heading-button:visited{
 	color: #238394;
@@ -53,15 +106,6 @@ body{
 .messages {
     display: none;
   }
-.messages:target {
-	display: flex;
-	flex: 10%;
-	padding: 5px 5px 5px 5px;
-	border: 3px solid #238394;
-	background: lightgray;
-	border-radius: 8px;
-	margin-top: 130px;
-   }
 ol{
 	display: flex;
 	flex: 100%;

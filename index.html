@@ -1,39 +1,103 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<title>Main page</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Main page</title>
+    <link rel="stylesheet" href="bavito.css">
+    <link rel="stylesheet" href="bavito-header.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+<script src="./cookiework.js"></script>
+<script>
+    window.onload = function () {
+        if (getCookie(autologin == "")) {
+            document.getElementById("logged").style.visibility = "hidden";
+        } else {
+            //document.getElementById("loginform").style.visibility = "hidden";
+            if(logincheck()){
+                document.getElementById("loginform").style.visibility = "hidden";
+
+            }
+        }
+    }
+</script>
 <body>
-    <div class="overlay">
-<a href="lab0.html" ><img src="lab0_link.png" alt="Лабораторная 0"></a>
-<a href="lab1.html"><img src="lab1_link.png" alt="Лабораторная 1"></a>
-<a href="lab2.html"><img src="lab2_link.png" alt="Лабораторная 2"></a>
-<a href="lab3.html"><img src="lab3_link.png" alt="Лабораторная 3"></a>
-<a href="lab4.html"><img src="lab4_link.png" alt="Лабораторная 4"></a>
-<p>
-<img src="cw1_link.png" alt="Контрольная неделя 1">
-<a href="cw1_original.html"><img src="cw1_link_orig.png" alt="Оригинал"></a>
-<a href="cw1_custom.html"><img src="cw1_link_custom.png" alt="Свой стиль"></a>
-</p>
-<p>
-<a href="lab5.html"><img src="lab5_link.png" alt="Лабораторная 5"></a>
-</p>
-<p>
-<img src="lab6.png" alt="Лабраторная 6">
-<a href="lab6-1.html"><img src="lab6-1_link.png" alt="Крестики-нолики"></a>
-<a href="lab6-2.html"><img src="lab6-2_link.png" alt="Лабиринт"></a>
-</p>
+<div class="header">
+    <img class="heading-logo" src="./bavito_files/heading_logo.png"></img>
+    <div class="text">Ваш регион - Новосибирск</div>
+    <form>
+        <p><input class="search-input" placeholder="Поиск по сайту">
+            <input class="search-input" type="submit" value="Найти"></p>
+    </form>
+    <a class="heading-button" href="index.html">Поддержка</a>
+    <a class="heading-button" href="index.html">Личный кабинет</a>
+    <a class="heading-button" href="index.html">Мои объявления</a>
+    <a class="heading-button" href="#messages">Уведомления</a>
+    <div class="messages" id="messages">
+        <ol class="ol-header">
+            <a href="#"><img src="./bavito_files/hide_msg.png" alt="Свернуть"></a>
+            <li>111111</li>
+            <li>222222</li>
+            <li>333333</li>
+            <li>444444</li>
+        </ol>
+    </div>
+    <form id="loginform">
+        Вы вошли как гость
+        <input class="login-input" placeholder="Логин">
+        <input class="password-input" placeholder="Пароль">
+        <input class="login-action" type="submit" value="Логин">
+    </form>
+    <div id="logged">
+        <input class="login-action" type="submit" value="Выйти">
+    </div>
+</div>
+<div class="left-bar">
+    Категории:
+    <ol>
+        <li>Транспорт</li>
+        <li>Недвижимость</li>
+        <li>Работа</li>
+        <li>Услуги</li>
+        <li>Мебель</li>
+        <li>Бытовая техника</li>
+        <li>Животные</li>
+        <li>Хобби и отдых</li>
+    </ol>
+</div>
+<div class="ads-top">
+    <img src="./bavito_files/ads-top.png"></img>
+</div>
+<div class="ads-right">
+    <img src="./bavito_files/ads-right.png"></img>
+</div>
+<div class="content">
 <p>
 <a href="TZ.pdf"><img src="TZ.png" alt="ТЗ"></a>
 </p>
-<p>
-<a href="bavito_index.html"><img src="bavito.png" alt="Bavito"></a>
-</p>
+    <div class="advert-box-box">
+        <div class="advert-box">
+            <h3>Ваши объявления</h3>
+            <ol>
+                <li>Объявление 1</li>
+                <li>Объявление 2</li>
+            </ol>
+        </div>
+        <div class="advert-box">
+            <h3>Новые объявления</h3>
+            <ol>
+                <li>Объявление 1</li>
+                <li>Объявление 2</li>
+            </ol>
+        </div>
+        <div class="advert-box">
+            <h3>Рекомендуемые объявления</h3>
+            <ol>
+                <li>Объявление 1</li>
+                <li>Объявление 2</li>
+            </ol>
+        </div>
     </div>
-    <video loop muted autoplay class="fullscreen-bg__video">
-        <source src="./background.mp4" type="video/mp4">
-    </video>
+</div>
 </body>
 </html>

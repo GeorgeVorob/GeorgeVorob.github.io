@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <script src="./cookiework.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script>
     window.onload = function () {
         if (getCookie(autologin == "")) {
@@ -53,17 +54,23 @@
     </div>
 </div>
 <div class="left-bar">
+<div ng-app="Categories_loader" ng-controller="Categories_loader_Ctrl"> 
     Категории:
     <ol>
-        <li>Транспорт</li>
-        <li>Недвижимость</li>
-        <li>Работа</li>
-        <li>Услуги</li>
-        <li>Мебель</li>
-        <li>Бытовая техника</li>
-        <li>Животные</li>
-        <li>Хобби и отдых</li>
+	<li ng-repeat="x in Categories_list">
+    {{ x.CategoryName}}
+  </li>
     </ol>
+	</div>
+<script>
+var app = angular.module('Categories_loader', []);
+app.controller('Categories_loader_Ctrl', function($scope, $http) {
+  $http.get("http://localhost:8888?func="+"Categories_loader")
+  .then(function(response) {
+      $scope.Categories_list = response.data;
+  });
+});
+</script>
 </div>
 <div class="ads-top">
     <img src="./bavito_files/ads-top.png"></img>

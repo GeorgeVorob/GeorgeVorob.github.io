@@ -18,6 +18,8 @@
 	background-color: #49cce3;
 	max-height: 300px;
 	max-width: 200px;
+	min-height: 300px;
+	min-width: 200px;
 }
 .card-deck{
 	padding: 10px 0px 0px 0px;
@@ -27,4 +29,4 @@
 }
 a {
     color: white;
-   }
+}

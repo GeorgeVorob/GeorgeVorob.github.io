@@ -14,18 +14,7 @@
     <script src="./cookiework.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script>
-        window.onload = function () {
-        document.getElementById("logged").style.visibility = "hidden";
-        if (getCookie(autologin == "")) {
-        document.getElementById("logged").style.visibility = "hidden";
-        } else {
-        //document.getElementById("loginform").style.visibility = "hidden";
-        if(logincheck()){
-        document.getElementById("loginform").style.visibility = "hidden";
-        
-        }
-        }
-        }
+
     </script>
     <body style="background-color:#49cce3;" ng-app="index_loader" ng-controller="index_loader_ctrl">
         
@@ -39,6 +28,17 @@
                 $http.get("http://localhost:8888?func="+"Signs_loader")
                 .then(function(response) {
                     $scope.Signs_list = response.data;
+                });
+                
+                document.getElementById("logged").style.visibility = "hidden";
+                if(getCookie("login")!= null)
+                 $http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
+                .then(function(response) {
+                    if (response.data == "true"){
+                    document.getElementById("logged").style.visibility = "visible";
+                    document.getElementById("loginform").style.visibility = "hidden";
+                    document.getElementById("tmp_login").innerHTML+="Вы вошли как "+getCookie("login");
+                    }
                 });
             });
         </script>
@@ -73,6 +73,7 @@
                 <button type="button" class="btn btn-outline-info">Логин</button>
             </form>
             <div id="logged">
+                <div id="tmp_login"></div>
                 <button type="button" class="btn btn-outline-info">Выйти</button>
             </div>
         </nav>

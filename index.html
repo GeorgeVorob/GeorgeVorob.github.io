@@ -12,15 +12,43 @@
         <link rel="stylesheet" href="bavito-header.css">
     </head>
     <script src="./cookiework.js"></script>
+    <script src="./bavito.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script>
-
-    </script>
-    <body style="background-color:#49cce3;" ng-app="index_loader" ng-controller="index_loader_ctrl">
+    <body style="background-color:#49cce3;" ng-app="ng_index" ng-controller="ng_index_ctrl">
         
         <script>
-            var app = angular.module('index_loader', []);
-            app.controller('index_loader_ctrl', function($scope, $http) {
+            var app = angular.module('ng_index', []);
+            app.controller('ng_index_ctrl', function($scope, $http) {
+                
+                $scope.loginadd = function loginadd()
+                {
+                    let login = document.getElementById("logintextbox").value;
+                    let password = document.getElementById("passwordtextbox").value;
+                    $http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+login+"&"+"password="+password)
+                    .then(function(response) 
+                    {
+                        if(response.data=="true")
+                        {
+                            setCookie("login",login,365);
+                            setCookie("password",password,365);
+                            location.reload(true);
+                        }
+                        else
+                        alert("Неверный логин или пароль");
+                    });
+                }
+                
+                document.getElementById("logged").style.visibility = "hidden";
+                if(getCookie("login")!= null)
+                $http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
+                .then(function(response) {
+                    if (response.data == "true"){
+                        document.getElementById("logged").style.visibility = "visible";
+                        document.getElementById("loginform").style.visibility = "hidden";
+                        document.getElementById("tmp_login").innerHTML+="Вы вошли как "+getCookie("login");
+                    }
+                });
+                
                 $http.get("http://localhost:8888?func="+"Categories_loader")
                 .then(function(response) {
                     $scope.Categories_list = response.data;
@@ -28,17 +56,6 @@
                 $http.get("http://localhost:8888?func="+"Signs_loader")
                 .then(function(response) {
                     $scope.Signs_list = response.data;
-                });
-                
-                document.getElementById("logged").style.visibility = "hidden";
-                if(getCookie("login")!= null)
-                 $http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
-                .then(function(response) {
-                    if (response.data == "true"){
-                    document.getElementById("logged").style.visibility = "visible";
-                    document.getElementById("loginform").style.visibility = "hidden";
-                    document.getElementById("tmp_login").innerHTML+="Вы вошли как "+getCookie("login");
-                    }
                 });
             });
         </script>
@@ -67,14 +84,15 @@
                     </li>
                 </ul>
             </div>
-            <form class="form-inline" action="" id="loginform">
-                <input class="form-control mr-sm-2" type="text" placeholder="Логин">
-                <input class="form-control mr-sm-2" type="text" placeholder="Пароль">
-                <button type="button" class="btn btn-outline-info">Логин</button>
+            <form class="form-inline" ng-submit="loginadd()" id="loginform">
+                <input class="form-control mr-sm-2" type="text" placeholder="Логин" id="logintextbox">
+                <input class="form-control mr-sm-2" type="text" placeholder="Пароль" id="passwordtextbox">
+                <button type="submit" class="btn btn-outline-info">Логин</button>
+                <a href="registration.html" class="btn btn-outline-info" >Регистрация</a>
             </form>
             <div id="logged">
                 <div id="tmp_login"></div>
-                <button type="button" class="btn btn-outline-info">Выйти</button>
+                <button type="button" class="btn btn-outline-info" onclick="loginremove()">Выйти</button>
             </div>
         </nav>
         <div class="left-bar">

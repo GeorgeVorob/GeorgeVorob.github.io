@@ -30,3 +30,11 @@
 a {
     color: white;
 }
+input:invalid {
+  border: 1px solid red;
+}
+.regform{
+	text-align: center;
+	margin: auto;
+	max-width: 400px;
+}

@@ -33,7 +33,7 @@
                         <a class="nav-link" href="index.html">Поддержка</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ProfileLink}}" id="profile_link">Личный кабинет</a>
+                        <a class="nav-link" href="index.html">Личный кабинет</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Мои объявления</a>
@@ -72,34 +72,15 @@
         <div class="ads-right">
             <img src="./bavito_files/ads_right.png"></img>
         </div>
-        <div class="content">
-            <div class="card-deck">
-                <div class="card">
-                    <img src="./bavito_files/vaccine.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="index.html"> <h5 class="card-title">Вакцина от коронавируса</h5> </a>
-                        <p class="card-price">170000₽</p>
-                        <p class="card-text">Новосбирск</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./TZ.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="TZ.pdf"> <h5 class="card-title">Техническое задание</h5> </a>
-                        <p class="card-price">0.03₽</p>
-                        <p class="card-text">Новосбирск</p>
-                    </div>
-                </div>
-                <div class="card" ng-repeat="x in Signs_list">
-                    <img ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <a href="{{'sign.html?func=Sign_load&signid='+x.Id}}"> <h5 class="card-title">{{x.Name}}</h5> </a>
-                        <p class="card-price">{{x.Price}}</p>
-                        <p class="card-text">{{x.Adress}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="./indexAngular.js"></script>
+		<div class="sign" ng-repeat="x in ProfileData">
+		<h1>Логин: {{x.Login}}</h1>
+        <h1>ФИО: {{x.FIO}}</h1>
+        <h1>Почта: {{x.E-mail}}</h1>
+        <h1>Адрес: {{x.Adress}}</h1>
+        <h1>Телефон: {{x.Phone}}</h1>
+        <h1>Рейтинг: {{x.Rating}}</h1>
+        <h1>Дата регистрации: {{x.RegDate}}</h1>
+		        <script src="./profileAngular.js"></script>
+		</div>
     </body>
 </html>

@@ -39,7 +39,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 	window.location.href = "registration.html";
 		else{
 		alert("502");
-		//TODO: Редирект на страницу ошибки не сервере 
+		//TODO: Редирект на страницу ошибки на сервере 
 		}
 	});
 	

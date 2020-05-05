@@ -24,7 +24,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>	
             <form class="form-inline" action="">
-                <input class="form-control mr-sm-2" type="text" placeholder="Поиск по сайту">
+                <input class="form-control mr-sm-2" class="form-control mr-sm-2" type="text" placeholder="Поиск по сайту">
                 <button type="button" class="btn btn-outline-info">Найти</button>
             </form>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -41,8 +41,8 @@
                 </ul>
             </div>
             <form class="form-inline" ng-submit="loginadd()" id="loginform">
-                <input class="form-control mr-sm-2" type="text" placeholder="Логин" id="logintextbox">
-                <input class="form-control mr-sm-2" type="text" placeholder="Пароль" id="passwordtextbox">
+                <input class="form-control mr-sm-2" class="form-control mr-sm-2" type="text" placeholder="Логин" id="logintextbox">
+                <input class="form-control mr-sm-2" class="form-control mr-sm-2" type="text" placeholder="Пароль" id="passwordtextbox">
                 <button type="submit" class="btn btn-outline-info">Логин</button>
                 <a href="registration.html" class="btn btn-outline-info" >Регистрация</a>
             </form>
@@ -72,16 +72,24 @@
         <div class="ads-right">
             <img src="./bavito_files/ads_right.png"></img>
         </div>
-        <a id="EditButton" href="{{Sign_editLink}}" class="btn btn-outline-info">Редактировать</a>
-		<div class="sign" ng-repeat="x in SignData">
-		<h1>Название: {{x.Name}}</h1>
-        <h1>Категория: {{x.Category}}</h1>
-        <h1>Дата публикации: {{x.Date}}</h1>
-        <h1>Адрес: {{x.Adress}}</h1>
-        <h1>Просмотры: {{x.Vievs}}</h1>
-        <h1>Цена: {{x.Price}}</h1>
-        <h1>Опубликовал: {{x.Author}}</h1>
-		        <script src="./signAngular.js"></script>
+        
+		<div ng-repeat="x in SignData">
+        <form class="regform">
+        <label>Старое значение: {{x.Name}}</label>
+		<input ng-model="NewSignData.Name" class="form-control mr-sm-2 textinput" type="text" placeholder="Название:" ></input><br>
+        <label>Старое значение: {{x.Category}}</label>
+        <input ng-model="NewSignData.Category" class="form-control mr-sm-2" type="text" placeholder="Категория:" value="{{x.Category}}"></input><br>
+        <label>Старое значение: {{x.Adress}}</label>
+        <input ng-model="NewSignData.Adress" class="form-control mr-sm-2" type="text" placeholder="Адрес:" value="{{x.Adress}}"></input><br>
+        <label>Старое значение: {{x.Price}}</label>
+        <input ng-model="NewSignData.Price" class="form-control mr-sm-2" type="text" placeholder="Цена:" value="{{x.Price}}"></input><br>    
+        <button type="submit" class="btn btn-outline-info" ng-click="SignUpdate(NewSignData)">Обновить</button>
+        <div class="alert alert-success" role="alert" display="none" id="alert">
+                        
+        </div>
+        </form>
+        
 		</div>
+        <script src="./Sign_editAngular.js"></script>
     </body>
 </html>

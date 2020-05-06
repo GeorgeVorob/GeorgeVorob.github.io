@@ -28,11 +28,15 @@
                         document.getElementById("loginform").style.visibility = "hidden";
                         document.getElementById("tmp_login").innerHTML+="Вы вошли как "+getCookie("login");
                         $scope.ProfileLink ="profile.html?func="+"Get_User_Data"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password");
+                        $scope.AddSignLink ="AddSign.html";
+                        $scope.MySignsLink ="MySigns.html";
                     }
                     else{
                     setCookie("login","",1);
                     setCookie("password","",1);
                     $scope.ProfileLink ="registration.html";
+                    $scope.AddSignLink ="registration.html";
+                    $scope.MySignsLink ="registration.html";
                         }
                 });
                 

@@ -44,8 +44,15 @@
                 .then(function(response) {
                     $scope.Categories_list = response.data;
                 });
+                
                 $http.get("http://localhost:8888?func="+"Signs_loader")
                 .then(function(response) {
                     $scope.Signs_list = response.data;
                 });
+                
+                $scope.search = function search()
+                {
+                window.location.href = "search.html?func=Signs_loader&name="+searchinput.value;    
+                }
+                
             });

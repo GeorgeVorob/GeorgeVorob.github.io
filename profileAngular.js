@@ -5,7 +5,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 	{
 		let login = document.getElementById("logintextbox").value;
 		let password = document.getElementById("passwordtextbox").value;
-		$http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+login+"&"+"password="+password)
+		$http.get("http://26.149.227.170:8888?func="+"Login_check"+"&"+"login="+login+"&"+"password="+password)
 		.then(function(response) 
 			{
 				if(response.data=="true")
@@ -21,7 +21,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 	
 	document.getElementById("logged").style.visibility = "hidden";
 	if(getCookie("login")!= null)
-	$http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
+	$http.get("http://26.149.227.170:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
 	.then(function(response) {
 		if (response.data == "true"){
 			document.getElementById("logged").style.visibility = "visible";
@@ -30,7 +30,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 		}
 	});
 	
-	$http.get("http://localhost:8888"+window.location.search)
+	$http.get("http://26.149.227.170:8888"+window.location.search)
 	.then(function onSuccess(response) {
 	$scope.ProfileData = response.data;
 		}).catch(function onError(response) {

@@ -5,7 +5,7 @@
                 {
                     let login = document.getElementById("logintextbox").value;
                     let password = document.getElementById("passwordtextbox").value;
-                    $http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+login+"&"+"password="+password)
+                    $http.get("http://26.149.227.170:8888?func="+"Login_check"+"&"+"login="+login+"&"+"password="+password)
                     .then(function(response) 
                     {
                         if(response.data=="true")
@@ -21,7 +21,7 @@
                 
                 document.getElementById("logged").style.visibility = "hidden";
                 if(getCookie("login")!= null)
-                $http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
+                $http.get("http://26.149.227.170:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
                 .then(function(response) {
                     if (response.data == "true"){
                         document.getElementById("logged").style.visibility = "visible";
@@ -40,12 +40,12 @@
                         }
                 });
                 
-                $http.get("http://localhost:8888?func="+"Categories_loader")
+                $http.get("http://26.149.227.170:8888?func="+"Categories_loader")
                 .then(function(response) {
                     $scope.Categories_list = response.data;
                 });
                 
-                $http.get("http://localhost:8888?func="+"Signs_loader")
+                $http.get("http://26.149.227.170:8888?func="+"Signs_loader")
                 .then(function(response) {
                     $scope.Signs_list = response.data;
                 });

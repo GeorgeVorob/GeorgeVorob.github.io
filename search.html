@@ -91,7 +91,7 @@
 		<h2>Результаты поиска:</h2>
             <div class="card-deck">
                 <div class="card" ng-repeat="x in Signs_list">
-                    <img ng-src="{{'http://26.149.227.170:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="...">
+                    <img ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="...">
                     <div class="card-body">
 						<a href="{{'sign.html?func=Sign_load&signid='+x.Id}}"> <h5 class="card-title">{{x.Name}}</h5> </a>
                         <p class="card-price">{{x.Price}}</p>

@@ -5,7 +5,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 	{
 		let login = document.getElementById("logintextbox").value;
 		let password = document.getElementById("passwordtextbox").value;
-		$http.get("http://26.149.227.170:8888?func="+"Login_check"+"&"+"login="+login+"&"+"password="+password)
+		$http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+login+"&"+"password="+password)
 		.then(function(response) 
 			{
 				if(response.data=="true")
@@ -21,7 +21,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 	
 	document.getElementById("logged").style.visibility = "hidden";
 	if(getCookie("login")!= null)
-	$http.get("http://26.149.227.170:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
+	$http.get("http://localhost:8888?func="+"Login_check"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password"))
 	.then(function(response) {
 		if (response.data == "true"){
 			document.getElementById("logged").style.visibility = "visible";
@@ -40,7 +40,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 		}
 	});
 	
-	$http.get("http://26.149.227.170:8888?func="+"Categories_loader")
+	$http.get("http://localhost:8888?func="+"Categories_loader")
 	.then(function(response) {
 		$scope.Categories_list = response.data;
 	});
@@ -50,7 +50,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 		window.location.href = "search.html?func=Signs_loader&Name="+searchinput.value;    
 	}
 	
-	$http.get("http://26.149.227.170:8888"+window.location.search)
+	$http.get("http://localhost:8888"+window.location.search)
 	.then(function(response) {
 		$scope.Signs_list = response.data;
 	});
@@ -59,7 +59,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 	{
 		$http({
 			method: 'POST',
-			url: 'http://26.149.227.170:8888?func=Signs_loader&isexpanded=true',
+			url: 'http://localhost:8888?func=Signs_loader&isexpanded=true',
 			headers: {'Content-Type': 'multipart/form-data'},
 			data: expsearcninput
 		})

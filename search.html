@@ -16,7 +16,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <body style="background-color:#49cce3;" ng-app="ng_index" ng-controller="ng_index_ctrl">
         
-        <nav class="navbar navbar-expand-md navbar-light bavito-header">
+		<nav class="navbar navbar-expand-md navbar-light bavito-header">
             <a class="navbar-brand" href="index.html">
                 <img src="./bavito_files/heading_logo.png" alt="Logo" style="width:130px;">
 			</a>
@@ -65,7 +65,9 @@
         <div class="container-fluid UI">
             <div class="row">
                 <div class="col">
-                    <img src="./bavito_files/ads_top.png"></img>
+                    <a href="https://arhivater.github.io/index.html">
+                        <img src="./bavito_files/Advertising.png"></img>
+					</a>
 				</div>
 			</div>
 		</div>        
@@ -73,22 +75,22 @@
             <img src="./bavito_files/ads_right.png"></img>
 		</div>
 		<div class="content">
-		<h3>Расширенный поиск:</h3>
-		<form id="expandedsearch">
-		<input type="text" ng-model="expsearcninput.name" placeholder="Название"></input>
-		Категория: <select ng-model="expsearcninput.category">
-		 <option ng-repeat="x in Categories_list" value="{{ x.CategoryName}}">{{ x.CategoryName}}</option>
-		</select>
-		<h4>Дата:</h4>
-		от <input type="date" ng-model="expsearcninput.datefrom"></input>
-		до <input type="date" ng-model="expsearcninput.dateto"></input>
-		<h4>Цена:</h4>
-		<input type="number" ng-model="expsearcninput.pricefrom" placeholder="от"></input>
-		<input type="number" ng-model="expsearcninput.priceto" placeholder="до"></input>
-		<button type="submit" class="btn btn-outline-info" ng-click="expandedsearch(expsearcninput)" >Найти</button>
-		</form>
-		<hr>
-		<h2>Результаты поиска:</h2>
+			<h3>Расширенный поиск:</h3>
+			<form id="expandedsearch">
+				<input type="text" ng-model="expsearcninput.name" placeholder="Название"></input>
+				Категория: <select ng-model="expsearcninput.category">
+					<option ng-repeat="x in Categories_list" value="{{ x.CategoryName}}">{{ x.CategoryName}}</option>
+				</select>
+				<h4>Дата:</h4>
+				от <input type="date" ng-model="expsearcninput.datefrom"></input>
+				до <input type="date" ng-model="expsearcninput.dateto"></input>
+				<h4>Цена:</h4>
+				<input type="number" ng-model="expsearcninput.pricefrom" placeholder="от"></input>
+				<input type="number" ng-model="expsearcninput.priceto" placeholder="до"></input>
+				<button type="submit" class="btn btn-outline-info" ng-click="expandedsearch(expsearcninput)" >Найти</button>
+			</form>
+			<hr>
+			<h2>Результаты поиска:</h2>
             <div class="card-deck">
                 <div class="card" ng-repeat="x in Signs_list">
                     <img ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="...">

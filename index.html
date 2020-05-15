@@ -65,9 +65,9 @@
         <div class="container-fluid UI">
             <div class="row">
                 <div class="col">
-                <a href="https://arhivater.github.io/index.html">
-                    <img src="./bavito_files/Advertising.png"></img>
-                </a>
+                    <a href="https://arhivater.github.io/index.html">
+                        <img src="./bavito_files/Advertising.png"></img>
+                    </a>
                 </div>
             </div>
         </div>        
@@ -95,7 +95,7 @@
                 <div class="card" ng-repeat="x in Signs_list">
                     <img ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <a href="{{'sign.html?func=Sign_load&signid='+x.Id}}"> <h5 class="card-title">{{x.Name}}</h5> </a>
+                        <a href="{{'sign.html?func=Sign_load&signid='+x.Id}}"> <h5 class="card-title">{{x.Name}}</h5> </a>
                         <p class="card-price">{{x.Price}}</p>
                         <p class="card-text">{{x.Adress}}</p>
                     </div>

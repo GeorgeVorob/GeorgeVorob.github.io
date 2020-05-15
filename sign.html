@@ -23,20 +23,20 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>	
-            <form class="form-inline" action="">
-                <input class="form-control mr-sm-2" type="text" placeholder="Поиск по сайту">
-                <button type="button" class="btn btn-outline-info">Найти</button>
+            <form class="form-inline" ng-submit="search()">
+                <input class="form-control mr-sm-2" type="text" placeholder="Поиск по сайту" id="searchinput">
+                <button type="submit" class="btn btn-outline-info">Найти</button>
             </form>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Поддержка</a>
+                        <a class="nav-link" href="{{AddSignLink}}" id="add_sign_link">Добавить объявление</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Личный кабинет</a>
+                        <a class="nav-link" href="{{ProfileLink}}" id="profile_link">Личный кабинет</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Мои объявления</a>
+                        <a class="nav-link" href="{{MySignsLink}}" id="my-signs_link">Мои объявления</a>
                     </li>
                 </ul>
             </div>
@@ -65,23 +65,27 @@
         <div class="container-fluid UI">
             <div class="row">
                 <div class="col">
-                    <img src="./bavito_files/ads_top.png"></img>
+                    <a href="https://arhivater.github.io/index.html">
+                        <img src="./bavito_files/Advertising.png"></img>
+                    </a>
                 </div>
             </div>
         </div>        
         <div class="ads-right">
             <img src="./bavito_files/ads_right.png"></img>
         </div>
-        <a id="EditButton" href="{{Sign_editLink}}" class="btn btn-outline-info">Редактировать</a>
-		<div class="sign" ng-repeat="x in SignData">
-		<h1>Название: {{x.Name}}</h1>
-        <h1>Категория: {{x.Category}}</h1>
-        <h1>Дата публикации: {{x.Date}}</h1>
-        <h1>Адрес: {{x.Adress}}</h1>
-        <h1>Просмотры: {{x.Vievs}}</h1>
-        <h1>Цена: {{x.Price}}</h1>
-        <h1>Опубликовал: {{x.Author}}</h1>
+        <div class="content">
+            <a id="EditButton" href="{{Sign_editLink}}" class="btn btn-outline-info">Редактировать</a>
+            <div class="sign" ng-repeat="x in SignData">
+                <h1>Название: {{x.Name}}</h1>
+                <h1>Категория: {{x.Category}}</h1>
+                <h1>Дата публикации: {{x.Date}}</h1>
+                <h1>Адрес: {{x.Adress}}</h1>
+                <h1>Просмотры: {{x.Vievs}}</h1>
+                <h1>Цена: {{x.Price}}</h1>
+                <h1>Опубликовал: {{x.Author}}</h1>
 		        <script src="./signAngular.js"></script>
-		</div>
+            </div>
+        </div>
     </body>
 </html>

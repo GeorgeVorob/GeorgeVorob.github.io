@@ -68,14 +68,11 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 		.then(function onSuccess(response) {
 			document.getElementById("alert").style.display = "block"; 
 			document.getElementById("alert").className = "alert alert-success";
-			document.getElementById('alert').innerHTML="Данны обновлены"; 
+			document.getElementById('alert').innerHTML=response.data; 
 			}).catch(function onError(response) {
 			document.getElementById("alert").style.display = "block"; 
 			document.getElementById("alert").className = "alert alert-danger";
-			if(response.status==400)
-			document.getElementById('alert').innerHTML="Неверные данные"; 
-			else
-			document.getElementById('alert').innerHTML="Ошибка на сервере"; 
+			document.getElementById('alert').innerHTML=response.data; 
 		});
 	}
 	

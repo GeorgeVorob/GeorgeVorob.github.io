@@ -81,6 +81,9 @@
                 <input ng-model="NewSignData.Category" class="form-control mr-sm-2" type="text" placeholder="Категория:"></input><br>
                 <input ng-model="NewSignData.Adress" class="form-control mr-sm-2" type="text" placeholder="Адрес:"></input><br>
                 <input ng-model="NewSignData.Price" class="form-control mr-sm-2" type="text" placeholder="Цена:"></input><br>    
+                  <input file-input="file" onchange="angular.element(this).scope().readFile(this)" type="file" class="form-control input-lg" accept="image/*">
+                <img src="{{imageURL}}" style="width:300px;" id="here">
+                
                 <button type="submit" class="btn btn-outline-info" ng-click="AddSign(NewSignData)">Добавить объявление</button>
                 <div class="alert alert-success" role="alert" display="none" id="alert">
                     

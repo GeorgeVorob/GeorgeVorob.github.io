@@ -49,9 +49,35 @@ app.controller('ng_index_ctrl', function($scope, $http) {
     .then(function(response) {
         $scope.Categories_list = response.data;
 	});
+	///////////////////////////////////////////////////////////////////////////////////////////
+	
+	$scope.readFile = function readFile(input)
+	{
+		const preview = document.getElementById("here");
+		const file = document.querySelector('input[type=file]').files[0];
+		const reader_preview = new FileReader();
+		const reader_blob = new FileReader();
+		
+		reader_preview.addEventListener("load", function () {
+			// convert image file to base64 string
+			preview.src = reader_preview.result;
+		}, false);
+		
+		reader_blob.addEventListener("load", function () {
+			$scope.imageinfo = reader_blob.result;
+            console.log(reader_blob.result);
+		}, false);
+		
+		if (file) {
+			reader_preview.readAsDataURL(file);
+			reader_blob.readAsDataURL(file);
+		}
+		
+	}
 	
 	$scope.AddSign = function AddSign(NewSigndata)
-	{				
+	{			
+	NewSigndata.Base64image= $scope.imageinfo;
 		$http({
 			method: 'POST',
 			url: 'http://localhost:8888?func=Add_Sign&login='+getCookie("login")+'&password='+getCookie("password"),

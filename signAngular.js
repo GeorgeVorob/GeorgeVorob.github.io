@@ -1,6 +1,8 @@
 var app = angular.module('ng_index', []);
 app.controller('ng_index_ctrl', function($scope, $http) {
 	
+	const urlParams = new URLSearchParams(window.location.search);
+	
     $scope.loginadd = function loginadd()
     {
         let login = document.getElementById("logintextbox").value;
@@ -44,6 +46,21 @@ app.controller('ng_index_ctrl', function($scope, $http) {
     {
         window.location.href = "search.html?func=Signs_loader&name="+searchinput.value;    
 	}
+	$scope.SignDelete = function SignDelete()
+	{
+		
+		$http.get("http://localhost:8888?func=SignDelete"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password")+"&"+"id="+urlParams.get('signid'))
+		.then(function onSuccess(response) {
+			document.getElementById("alert").style.display = "block"; 
+			document.getElementById("alert").className = "alert alert-success";
+			document.getElementById('alert').innerHTML=response.data; 
+			}).catch(function onError(response) {
+			document.getElementById("alert").style.display = "block"; 
+			document.getElementById("alert").className = "alert alert-danger";
+			document.getElementById('alert').innerHTML=response.data; 
+		});
+		
+	}
     
     $http.get("http://localhost:8888?func="+"Categories_loader")
     .then(function(response) {
@@ -54,9 +71,11 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 	.then(function(response){
 		$scope.SignData = response.data;
 		document.getElementById("EditButton").style.visibility = "hidden";
+		document.getElementById("DeleteButton").style.visibility = "hidden";
 		if($scope.SignData.Author=getCookie("login"))
 		{
 			document.getElementById("EditButton").style.visibility = "visible";
+			document.getElementById("DeleteButton").style.visibility = "visible";
 			$scope.Sign_editLink="SignEdit.html?signid="+$scope.SignData[0].Id+"&Login="+getCookie("login")+"&Password="+getCookie("password");
 		}
 	});

@@ -75,16 +75,22 @@
             <img src="./bavito_files/ads_right.png"></img>
         </div>
         <div class="content">
-            <a id="EditButton" href="{{Sign_editLink}}" class="btn btn-outline-info">Редактировать</a>
             <div class="sign" ng-repeat="x in SignData">
-                <h1>Название: {{x.Name}}</h1>
-                <h1>Категория: {{x.Category}}</h1>
-                <h1>Дата публикации: {{x.Date}}</h1>
-                <h1>Адрес: {{x.Adress}}</h1>
-                <h1>Просмотры: {{x.Vievs}}</h1>
-                <h1>Цена: {{x.Price}}</h1>
-                <h1>Опубликовал: {{x.Author}}</h1>
+                <h1>{{x.Name}}</h1>
+                <h5>{{x.Category}}</h5>
+                <hr>
+                <img class="rounded-lg" ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}"></img>
+                <h5>Дата публикации: {{x.Date}}</h5>
+                <h5>Адрес: {{x.Adress}}</h5>
+                <h5>Просмотры: {{x.Vievs}}</h5>
+                <h5>Цена: {{x.Price}}</h5>
+                <h4>Опубликовал: <a href="profile.html?func=Get_User_Data&login={{x.Author}}">{{x.Author}}</a></h4>
 		        <script src="./signAngular.js"></script>
+            </div>
+            <a id="EditButton" href="{{Sign_editLink}}" class="btn btn-outline-info">Редактировать</a>
+            <button id="DeleteButton" class="btn btn-outline-info" ng-click="SignDelete()">Удалить</button>
+            <div class="alert alert-success" role="alert" display="none" id="alert">
+                
             </div>
         </div>
     </body>

@@ -8,20 +8,22 @@
 
 </style>
     <script>
-	    var file="";
+	    var kappa="";
+	    var JSON="";
 	    function readJSON(path) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', path, true);
         xhr.responseType = 'blob';
         xhr.onload = function(e) { 
           if (this.status == 200) {
-              file = new File([this.response], 'temp');
+              kappa = new File([this.response], 'temp');
               var fileReader = new FileReader();
               fileReader.addEventListener('load', function(){
                    //do stuff with fileReader.result
-		      console.log(fileReader.result);
+		      kappa=fileReader.result;
+		      JSON = JSON.stringify(kappa);
               });
-              fileReader.readAsText(file);
+              fileReader.readAsText(kappa);
           } 
         }
         xhr.send();

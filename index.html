@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="card" ng-repeat="x in Signs_list">
-                    <img ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="id незагруженного изображения: {{x.Id}}">
+                    <div class="card-img-container"> <img ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="id незагруженного изображения: {{x.Id}}"></div>
                     <div class="card-body">
                         <a href="{{'sign.html?func=Sign_load&signid='+x.Id}}"> <h5 class="card-title">{{x.Name}}</h5> </a>
                         <p class="card-price">{{x.Price}}</p>

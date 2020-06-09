@@ -16,9 +16,8 @@
 }
 .card{
 	background-color: #49cce3;
-	max-height: 300px;
+	height: 300px;
 	max-width: 200px;
-	min-height: 300px;
 	min-width: 200px;
 }
 .card-deck{
@@ -40,6 +39,11 @@ input:invalid {
 }
 .SignEditForm{
 }
-.sign{
+.content{
 	margin-left: 170px;
+	margin-right: 190px;
+}
+.card-img-container{
+max-height: 150px;
+overflow: hidden;
 }

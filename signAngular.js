@@ -51,11 +51,11 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 		
 		$http.get("http://localhost:8888?func=SignDelete"+"&"+"login="+getCookie("login")+"&"+"password="+getCookie("password")+"&"+"id="+urlParams.get('signid'))
 		.then(function onSuccess(response) {
-			document.getElementById("alert").style.display = "block"; 
+			document.getElementById("alert").style.visibility = "visible";
 			document.getElementById("alert").className = "alert alert-success";
 			document.getElementById('alert').innerHTML=response.data; 
 			}).catch(function onError(response) {
-			document.getElementById("alert").style.display = "block"; 
+			document.getElementById("alert").style.visibility = "visible";
 			document.getElementById("alert").className = "alert alert-danger";
 			document.getElementById('alert').innerHTML=response.data; 
 		});
@@ -72,6 +72,7 @@ app.controller('ng_index_ctrl', function($scope, $http) {
 		$scope.SignData = response.data;
 		document.getElementById("EditButton").style.visibility = "hidden";
 		document.getElementById("DeleteButton").style.visibility = "hidden";
+		document.getElementById("alert").style.visibility = "hidden"; 
 		if($scope.SignData.Author=getCookie("login"))
 		{
 			document.getElementById("EditButton").style.visibility = "visible";

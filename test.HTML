@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Лабораторная 5</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+</style>
+    <script>
+	    function readJSON(path) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', path, true);
+        xhr.responseType = 'blob';
+        xhr.onload = function(e) { 
+          if (this.status == 200) {
+              var file = new File([this.response], 'temp');
+              var fileReader = new FileReader();
+              fileReader.addEventListener('load', function(){
+                   //do stuff with fileReader.result
+              });
+              fileReader.readAsText(file);
+          } 
+        }
+        xhr.send();
+    }
+	var test = readJSON('./test.json');
+	 console.log(test);
+    </script>
+</head>
+<body>
+<div id="test"></div>
+</body>
+</html>

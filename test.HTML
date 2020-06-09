@@ -18,6 +18,7 @@
               var fileReader = new FileReader();
               fileReader.addEventListener('load', function(){
                    //do stuff with fileReader.result
+		      console.log(fileReader.result);
               });
               fileReader.readAsText(file);
           } 

@@ -35,9 +35,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ProfileLink}}" id="profile_link">Личный кабинет</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{MySignsLink}}" id="my-signs_link">Мои объявления</a>
-                    </li>
                 </ul>
             </div>
             <form class="form-inline" ng-submit="loginadd()" id="loginform">
@@ -76,22 +73,6 @@
         </div>
         <div class="content">
             <div class="card-deck">
-                <div class="card">
-                    <img src="./bavito_files/vaccine.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="index.html"> <h5 class="card-title">Вакцина от коронавируса</h5> </a>
-                        <p class="card-price">170000₽</p>
-                        <p class="card-text">Новосбирск</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./TZ.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="TZ.pdf"> <h5 class="card-title">Техническое задание</h5> </a>
-                        <p class="card-price">0.03₽</p>
-                        <p class="card-text">Новосбирск</p>
-                    </div>
-                </div>
                 <div class="card" ng-repeat="x in Signs_list">
                     <div class="card-img-container"> <img ng-src="{{'http://localhost:8888?func=Image_load&imgid=' + x.Id}}" class="card-img-top" alt="id незагруженного изображения: {{x.Id}}"></div>
                     <div class="card-body">
